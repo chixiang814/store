@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import Header from './components/Header';
+import { Card } from './components/Card';
 import './App.css';
+import {data} from "./data"
+import { product } from "./interface/interface"
+
+// interface product {
+//   title : string,
+//   price : number,
+//   discountPercentage: number,
+//   img : string
+// }
+
 
 function App() {
+
+  const dataMap = data.map((d) => ({
+    title : d.title,
+    price : d.price,
+    img : d.image,
+    discountPercentage : d.discount,
+    rating : d.rating
+  }))
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className='App--Body'> 
+          <h3>Popular Product</h3>
+          <div className='CardContainer'>
+            { dataMap.map((d)=> <Card data={d} />) }
+          </div>
+      </div>
     </div>
   );
 }
