@@ -1,12 +1,17 @@
 import { data } from "../data"
 import { product } from "../interface/interface"
 
-const Card = (props:{data:product}) => {
-    const {data} = props;
+const Card = (props:{data:product,
+                    addToCart:Function,
+                    removeFromCart:Function}) => {
+    const {data, addToCart, removeFromCart} = props;
     
     return(
         <div className="Card tooltip">
-            <span className="tooltiptext">{data.title}</span>
+            <span className="tooltiptext">
+                <button className="Card--AddCart" onClick={()=>addToCart(data.id)}>Add to Cart</button>
+                <button className="Card--RemoveCart" onClick={()=>removeFromCart(data.id)}>Remove from Cart</button>
+            </span>
             <img src={data.img} className="Card--Img" />
             <div className="Card--Content--Container">
                 <div className="Card--Title">{data.title}</div>

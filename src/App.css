@@ -13,7 +13,25 @@
 }
 
 .App--Body {
-  height : 100vh - 150px;
+  /* height: 100vh - 150px; */
+  display: flex;
+}
+
+.App--Product {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.SideBar {
+  width: 200px;
+  background-color:#888888; 
+  height: calc(100vh - 150px);
+  /* height: ; */
+  /* border: 1px solid black; */
+}
+
+.Bold {
+  font-weight: bold;
 }
 
 .CardContainer {
@@ -82,6 +100,41 @@
 
 .Card--Rating--Checked {
   color: gold;
+}
+
+.Cart--Item {
+  margin-top: 30px;
+}
+
+.Cart--Img {
+  width: 100%;
+}
+
+.Cart--Title {
+  font-weight: bold;
+  white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 90%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.Cart--Action--Container {
+  justify-content: space-around;
+  display: flex;
+}
+
+.Cart--Button {
+  border: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.Card--Quantity {
+  font-weight: bold;
 }
 
 /* TODO: Tool tip move with cursor */

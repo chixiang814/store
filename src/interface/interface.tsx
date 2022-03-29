@@ -1,5 +1,6 @@
 
 interface product {
+    id:string,
     title : string,
     price : number,
     discountPercentage: number,
@@ -7,4 +8,9 @@ interface product {
     rating: number
 }
 
-export type { product }
+interface cart {
+    id: string,
+    quantity:number
+}
+
+export type { product, cart}
